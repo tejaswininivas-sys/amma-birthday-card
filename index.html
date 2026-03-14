@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>🎂🎉</title>
+    <meta property="og:title" content="🎉 Happy Birthday Amma ❤️">
+    <meta property="og:description" content="A special birthday card made with love.">
+    <meta property="og:image" content="https://tejaswininivas-sys.github.io/amma-birthday-card/images/preview.jpg">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Linking the CSS file -->
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+<div class="envelope-container" onclick="openCard()">
+
+    <div class="envelope">
+        ✉️
+        <p>Click to Open</p>
+    </div>
+
+</div>
+
+<div class="card" id="card">
+
+    <h1 id="typing-title"></h1>
+    <p class="cake">🎂</p>
+
+    <div class="photo-gallery">
+    <img src="images/mom1.jpg">
+    <img src="images/mom2.jpg">
+    <img src="images/mom3.jpg">
+    </div>
+
+    <p class="message">
+        For Amma ❤️ <br><br>
+        We hope you enjoy your day today and have a great time.     
+        You deserve the best day ever! 
+        Lots of love, Baby M and T 🎉
+    </p>
+
+</div>
+
+<script>
+
+const text = " Happy Birthday Amma ";
+let index = 0;
+
+function typeEffect() {
+    if (index < text.length) {
+        document.getElementById("typing-title").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 80);
+    }
+}
+
+function openCard(){
+
+    document.getElementById("card").style.display = "block";
+    document.querySelector(".envelope-container").style.display = "none";
+
+    document.getElementById("typing-title").innerHTML = "";
+    index = 0;
+
+    typeEffect();
+
+    // 🎊 CONFETTI EFFECT
+    confetti({
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 }
+    });
+}
+
+</script>
+<div class="hearts">
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+</div>
+</body>
+</html>
